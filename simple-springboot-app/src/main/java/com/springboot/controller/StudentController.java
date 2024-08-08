@@ -14,11 +14,18 @@ import com.springboot.model.Student;
 @RequestMapping("/student")
 public class StudentController {
 
+	// CREATE PULL REQUEST
 	@PostMapping
 	public String saveStudentInformation(@RequestHeader("student-auth-key") String authorization,
 			@RequestBody Student student) {
 		if (StringUtils.isBlank(student.getLastName())) {
 			throw new InvalidFieldException("Last Name is a required field");
+		}
+
+		if(student.getAge().equals("50")){
+			System.out.println("Hello Aut");
+		}else{
+			System.out.println("Hello Guys!");
 		}
 		return String.format("Authorization %s is valid, and Data is saved", authorization);
 	}
