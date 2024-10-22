@@ -22,10 +22,6 @@ public class StudentController {
 			throw new InvalidFieldException("Last Name is a required field");
 		}
 
-		if(student.getAge().equals("50")){
-			System.out.println("Hello Aut");
-		}else{
-			System.out.println("Hello Guys!");
 		}
 		return String.format("Authorization %s is valid, and Data is saved", authorization);
 	}
